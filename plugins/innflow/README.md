@@ -1,4 +1,4 @@
-# Innflow for Codex
+# Innflow for Codex and Grok Build
 
 One plugin for inspecting workflows, diagnosing failed executions, running authorized automations, and creating drafts when Innflow authoring is enabled.
 
@@ -30,7 +30,7 @@ The package contains one skill, one remote MCP connection, and a brand icon. It 
 Run from the standalone plugin repository root:
 
 ```sh
-python3 scripts/package-innflow-plugin.py --output /tmp/innflow-plugin-0.1.0.zip
+python3 scripts/package-innflow-plugin.py --output /tmp/innflow-plugin-0.1.1.zip
 ```
 
 Extract the archive into a new directory, then run `codex plugin marketplace add /path/to/extracted-directory` and `codex plugin add innflow@innflow-plugins`. The archive includes only the plugin and its marketplace catalog, not the application repository.
@@ -40,3 +40,14 @@ Extract the archive into a new directory, then run `codex plugin marketplace add
 Before advertising a public release, authenticate in a fresh Codex session and check workflow discovery and a real execution inspection. If advertising authoring, create and validate a disposable draft in a workspace with that capability enabled. Run/deploy checks need an explicitly chosen test workflow with understood side effects.
 
 Public directory publication additionally requires submission and review through OpenAI; a local marketplace install is not a directory listing. See [plugin packaging](https://developers.openai.com/plugins/build/plugins) and [public submission](https://developers.openai.com/plugins/deploy/submission).
+
+## Grok Build compatibility
+
+`.grok-plugin/plugin.json` and `.mcp.json` expose the same skill and remote MCP
+connection to Grok Build. The plugin directory is `plugins/innflow` in the source
+repository. It contains no agents, hooks, shell commands, or local dependencies.
+
+## License
+
+Plugin files are licensed under Apache-2.0; see [LICENSE](LICENSE). This does not
+license the hosted Innflow service or the separate application source.

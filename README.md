@@ -1,8 +1,8 @@
-# Innflow for Codex
+# Innflow for Codex and Grok Build
 
 Connect Codex to your Innflow workspace to inspect workflows, diagnose failed runs, execute authorized automations, and create workflow drafts when authoring is available.
 
-This is the standalone source repository for the Innflow Codex plugin. It contains the plugin, its workflow skill, a remote MCP connection, and the installable marketplace catalog.
+This is the standalone source repository for the Innflow plugin. It contains the plugin, its workflow skill, a remote MCP connection, and the installable marketplace catalog.
 
 ## Install
 
@@ -41,7 +41,7 @@ The plugin connects to `https://mcp.innflow.ai/mcp`. It installs no local server
 From the repository root, using Python 3:
 
 ```sh
-python3 scripts/package-innflow-plugin.py --output dist/innflow-plugin-0.1.0.zip
+python3 scripts/package-innflow-plugin.py --output dist/innflow-plugin-0.1.1.zip
 ```
 
 The packager includes only the explicitly listed plugin files and marketplace catalog.
@@ -52,7 +52,36 @@ The packager includes only the explicitly listed plugin files and marketplace ca
 - Plugin directory: `plugins/innflow`
 - Manifest: `plugins/innflow/plugin.json`
 - Marketplace: `.agents/plugins/marketplace.json`
-- Plugin version: `0.1.0`
+- Plugin version: `0.1.1`
 - Website: https://innflow.ai
 
 This repository provides the installable plugin source. An OpenAI directory listing requires a separate submission and review.
+
+## Grok Build
+
+The same plugin directory includes `.grok-plugin/plugin.json` and `.mcp.json`
+for Grok Build, sharing the workflow skill and hosted MCP endpoint with Codex.
+
+```sh
+grok plugin marketplace add innflow-ai/innflow-codex-plugin
+```
+
+Open Grok's `/plugins` marketplace tab and install Innflow from `innflow-plugins`.
+Authenticate with Innflow when prompted. Public xAI marketplace inclusion is a
+separate catalog pull request and requires maintainer approval.
+
+## OpenAI directory upload
+
+Build the single-plugin ZIP (distinct from the team marketplace archive):
+
+```sh
+python3 scripts/package-innflow-plugin.py --format submission --output dist/innflow-openai-0.1.1.zip
+```
+
+See [submission preparation](SUBMISSION.md) for the review checklist and limits.
+
+## License
+
+This repository's plugin files are licensed under [Apache-2.0](LICENSE).
+This license does not apply to the separately hosted Innflow service or its
+application repository. Innflow names and marks remain subject to trademark rights.

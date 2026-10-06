@@ -1,0 +1,25 @@
+{
+  "name": "innflow-plugins",
+  "description": "Official Innflow plugin source",
+  "owner": {
+    "name": "Innflow"
+  },
+  "plugins": [
+    {
+      "name": "innflow",
+      "description": "Inspect and troubleshoot Innflow workflows and run authorized automations.",
+      "source": {
+        "type": "local",
+        "path": "./plugins/innflow"
+      },
+      "homepage": "https://innflow.ai",
+      "keywords": [
+        "innflow",
+        "innflow workflows"
+      ],
+      "domains": [
+        "innflow.ai"
+      ]
+    }
+  ]
+}

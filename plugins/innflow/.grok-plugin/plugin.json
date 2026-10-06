@@ -1,0 +1,17 @@
+{
+  "name": "innflow",
+  "version": "0.1.1",
+  "description": "Inspect and troubleshoot Innflow workflows, run authorized automations, and build drafts when authoring is available.",
+  "author": {
+    "name": "Innflow",
+    "url": "https://innflow.ai"
+  },
+  "homepage": "https://innflow.ai",
+  "repository": "https://github.com/innflow-ai/innflow-codex-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "innflow",
+    "innflow workflows"
+  ],
+  "logo": "assets/icon.png"
+}
