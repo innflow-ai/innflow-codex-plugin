@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "innflow",
+  "version": "0.1.0",
+  "description": "Inspect and troubleshoot Innflow workflows, run authorized automations, and build drafts when authoring is available.",
+  "author": { "name": "Innflow", "url": "https://innflow.ai" },
+  "homepage": "https://innflow.ai",
+  "keywords": ["innflow", "workflows", "automation"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Innflow",
+        "shortDescription": "Build and troubleshoot your workflows",
+        "longDescription": "Connect your Innflow account to inspect workflows, investigate failed runs, and execute automations you request. Create and validate workflow drafts when your workspace has authoring enabled. Uses your existing Innflow permissions and connected accounts.",
+        "developerName": "Innflow",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://innflow.ai",
+        "brandColor": "#3b82f6",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png",
+        "defaultPrompt": [
+          "Find my Innflow workflows and show their deployment status.",
+          "Investigate the latest failed run of my Innflow workflow.",
+          "Create an Innflow workflow draft from this automation idea."
+        ]
+      }
+    }
+  }
+}
